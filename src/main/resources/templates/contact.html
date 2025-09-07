@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+    <section>
+    <!-- Main Container Start -->
+
+<div class="container-fluid">
+	
+    <div class="row">
+        <div class="col-sm-12 py-5 bg text-center">
+            <h3 class="fw-bold">Contact Us</h3>
+        </div>
+    </div>
+	<div th:if="${message}">
+		<p th:text="${message}" class="alert alert-success alert-dismissible"></p>
+	</div>
+</div>
+
+<div class="container header-2 my-5 px-5">
+	<form class="form-group" method="post" th:object="${dto}">
+    <div class="row">
+        <div class="col-sm-6">
+            <label  class="my-4 fs-5 fw-bold" for="name">Name *</label>
+            <input id="name" required th:field="${dto.name}" class="form-control form-control-lg fs-6 rounded-0 border-1 border-black" placeholder="Enter Your Name" type="text">
+        </div>
+		
+
+		<div class="col-sm-6">
+			<label  class="my-4 fs-5 fw-bold" for="gender">Gender *</label>
+			            <select id="gender" required th:field="${dto.gender}" class="form-select form-select-lg border-1 border-black rounded-0 fs-6">
+			                <option selected value="">-Select Your Gender-</option>
+			                <option value="male">Male</option>
+			                <option value="female">Female</option>
+			                <option value="custom">Custom</option>
+			              </select>
+		</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label  class="my-4 fs-5 fw-bold" for="contactno">Contact Number *</label>
+            <input id="contactno" required th:field="${dto.contactno}" class="form-control form-control-lg fs-6 rounded-0 border-1 border-black" placeholder="Enter Your Contact Number"  >
+        </div>
+		
+
+		<div class="col-sm-6">
+		    <label  class="my-4 fs-5 fw-bold" for="email">Email Address *</label>
+		    <input id="email" required th:field="${dto.emailaddress}" placeholder="example@domain" class="form-control form-control-lg border-1 border-black rounded-0 fs-6" type="email">
+		</div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <label  class="my-4 fs-5 fw-bold" for="enquirytext">Enquiry *</label>
+            <textarea id="enquirytext" required th:field="${dto.enquirytext}" style="min-height: 200px; scrollbar-width: none; resize: none;" class="mb-5 form-control form-lg border-1 border-black rounded-0 fs-6">
+             </textarea>
+        </div>
+    </div>
+	
+	<div class="row">
+			<div class="col-sm-12 text-center">
+				<button type="submit" class="btn btn-dark mb-5 rounded-0">Submit</button>
+				 
+			</div>
+		</div>
+
+    </form>
+</div>
+
+</section>
+
+    <!-- Main Container End -->
+
+    <!-- Bootstrap Script Start -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Script End -->
+
+</body>
+
+</html>

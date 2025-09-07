@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<div class="col-sm-10">
+				<h1 class="fw-bold" style="color: #EF662F">Manage Complaints</h1>
+				<div th:if="${msg}">
+					<p th:text="${msg}" class="alert alert-danger alert-dismissible"></p>
+				</div>
+			</div>
+
+			<div style="overflow: auto; width: 100%; height: 60vh;">
+			<table class="table table-bordered">
+				<thead style="background-color:#EF662F; color: #fff">
+					<tr>
+						<th>Name</th>
+						<th>Enrollment No</th>
+						<th>Contact No</th>
+						<th>Email Address</th>
+						<th>Complaint Subject</th>
+						<th>Complaint Message</th>
+						<th>Complaint Date</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="c:${clist}">
+						<td th:text="${c.name}"></td>
+						<td th:text="${c.enrollmentno}"></td>
+						<td th:text="${c.contactno}"></td>
+						<td th:text="${c.emailaddress}"></td>
+						<td th:text="${c.subject}"></td>
+						<td th:text="${c.message}"></td>
+						<td th:text="${c.resdate}"></td>
+						<td>
+							<a th:href="@{viewComplaint/delete(resid=${c.resid})}">
+								<button onclick='return confirm("Are You sure you want to Delete")' type="button"
+									class="btn btn-danger">Delete</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

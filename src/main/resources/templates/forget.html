@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="base::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 py-5 bg text-center">
+					<h3 class="fw-bold">Forget Password</h3>
+				</div>
+			</div>
+			<div th:if="${message}">
+				<p th:text="${message}" class="alert alert-success alert-dismissible"></p>
+			</div>
+		</div>
+		<form method="post">
+			<div class="container header-2 my-5 px-5 border" style="width: 60vw;">
+				<div class="row">
+					<div class="col-sm-12">
+						<label class="my-4 fs-5 fw-bold mt-5" for="email">Email Address *</label>
+						<input id="email" class="form-control form-control-lg fs-6 rounded-0 border-1 border-black"
+							placeholder="Enter Your Email Address" type="email">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<label class="my-4 fs-5 fw-bold mt-3" for="password">Password *</label>
+						<input id="password" class="mb-5 form-control form-control-lg fs-6 rounded-0 border-1 border-black"
+							placeholder="Enter Your Password" type="password">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 text-end mb-5">
+					<span><a href="/apply">New to Portal? Apply Now</a></span>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+</body>
+
+</html>

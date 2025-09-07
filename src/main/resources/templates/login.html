@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="base::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 py-5 bg text-center">
+					<h3 class="fw-bold">Student Login</h3>
+				</div>
+			</div>
+			<div th:if="${msg}">
+				<p th:text="${msg}" class="alert alert-danger alert-dismissible"></p>
+			</div>
+		</div>
+		<form method="post" th:object="${dto}">
+			<div class="container header-2 my-5 px-5 border" style="width: 60vw;">
+				<div class="row">
+					<div class="col-sm-12">
+						<label class="my-4 fs-5 fw-bold mt-5" for="email">Email Address *</label>
+						<input id="email" th:field="${dto.emailaddress}" class="form-control form-control-lg fs-6 rounded-0 border-1 border-black"
+							placeholder="Enter Your Email Address" type="email">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<label class="my-4 fs-5 fw-bold mt-3" for="password">Password *</label>
+						<input id="password" th:field="${dto.password}"
+							class="mb-5 form-control form-control-lg fs-6 rounded-0 border-1 border-black"
+							placeholder="Enter Your Password" type="password">
+					</div>
+				</div>
+			</div>
+			<div class="row" style="width: 60vw;">
+				<div class="col-sm-12 text-end mb-5">
+					<button class="btn btn-lg rounded-0 text-white fw-bold px-4 me-2" style="background-color: #FF4500"
+						type="submit">Login</button>
+				</div>
+			</div>
+		</form>
+	</section>
+</body>
+
+</html>

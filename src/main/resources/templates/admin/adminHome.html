@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		<div>
+			<div class="row">
+				<div class="col-sm-4 p-3">
+					<div class="card text-center shadow p-3">
+						<h2>Total Registered Students</h2>
+						<hr />
+						<h4 th:text="${stdcount}" style="color: #EF662F"></h4>
+					</div>
+				</div>
+				<div class="col-sm-4 p-3">
+					<div class="card text-center shadow h-100 p-3">
+						<h2>Total Enquiries</h2>
+						<hr />
+						<h4 th:text="${ecount}" style="color: #EF662F"></h4>
+					</div>
+				</div>
+				<div class="col-sm-4 p-3">
+					<div class="card text-center shadow h-100 p-3">
+						<h2>Total Test Submitted</h2>
+						<hr />
+						<h4 th:text="${rcount}" style="color: #EF662F"></h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 p-3">
+					<div class="card text-center shadow p-3">
+						<h2>Total Feedbacks</h2>
+						<hr />
+						<h4 th:text="${fcount}" style="color: #EF662F"></h4>
+					</div>
+				</div>
+				<div class="col-sm-6 p-3">
+					<div class="card text-center shadow p-3">
+						<h2>Total Complaints</h2>
+						<hr />
+						<h4 th:text="${ccount}" style="color: #EF662F"></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

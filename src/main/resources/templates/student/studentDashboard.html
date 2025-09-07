@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="student/studentBase::layout(~{::section})">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<div class="col-sm-12">
+				<marquee behavior="alternate">
+					<p>For any query reach us through our helpline number <span class="fw-bold"
+							style="color: #EF662F"><i class="fa-solid fa-phone"></i> 9454084445, </span><span
+							class="fw-bold" style="color: #EF662F"><i class="fa-solid fa-phone"></i> 7080102008</span>
+						or visit us at <span class="fw-bold" style="color: #EF662F"><i class="fa-solid fa-envelope"></i>
+							hr@softproindia.in</span></p>
+				</marquee>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div th:if="${msg}">
+						<p th:text="${msg}" class="alert alert-success alert dismissible"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="card shadow w-100">
+							<div class="row">
+								<div class="col-sm-12 text-center pt-3">
+									<h3 style="color:#EF662F">Hello, <span th:text="${sinfo.name}"></span> Good Morning
+									</h3>
+									<hr />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="text-center" th:if="${sinfo.profilepic}">
+										<img alt="Image not found" th:src="@{'/user/'+${sinfo.profilepic}}"
+											class="w-100">
+									</div>
+									<div th:unless="${sinfo.profilepic}" class="text-center">
+										<img alt="Image not found" src="../Images/user.png">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<p><i class="fa-solid fa-user" style="color:#EF662F"></i><span
+											th:text="${sinfo.name}">label text</span></p>
+									<p><i class="fa-solid fa-graduation-cap" style="color:#EF662F"></i><span
+											th:text="${sinfo.branch}">label
+											text</span></p>
+									<p><i class="fa-solid fa-envelope" style="color: #EF662F;"></i><span
+											th:text="${sinfo.emailaddress}">label
+											text</span></p>
+									<p><i class="fa-solid fa-phone" style="color: #EF662F;"></i><span
+											th:text="${sinfo.contactno}">label text</span>
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 p-3 ps-5 text-center">
+									<form method="post" action="/student/studentDashboard" th:object="${dto}"
+										enctype="multipart/form-data">
+										<div class="row">
+											<div class="col-sm-6 text-end">
+												<input type="file" th:field="${dto.profilepic}" required />
+											</div>
+											<div class="col-sm-6 text-end">
+												<button type="submit" class="btn"
+													style="background-color:#EF662F; color: #fff;">Upload</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="card shadow p-2 h-100">
+							<iframe width="100%" height="100%"
+								src="https://www.youtube.com/embed/5uzBevGgugQ?si=GGUWoMxuDrnkyzMX"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 my-3">
+					<div class="card shadow p-3">
+						<div class="row">
+							<div class="col-sm-6 text-center" style="color: #EF662F;"><i
+									class="fa-solid fa-building-columns" style="font-size: 50px"></i></div>
+							<div class="col-sm-6 text-center">
+								<h4 style="color: #EF662F">Training Mode</h4>
+								<button class="btn" style="background-color: #EF662F; color: #fff;"
+									th:text="${sinfo.trainingmode}"></button>
+							</div>
+						</div>
+					</div>
+
+					<div class="card shadow p-3">
+						<div class="row">
+							<div class="col-sm-5">
+								<img src="../Images/house1.jpg" height="100" width="100%">
+							</div>
+							<div class="col-sm-7">
+								<h4>Softpro House</h4>
+								<p>Uska Address</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="col-sm-6 my-3">
+					<div class="card shadow p-3 w-100 h-100">
+						<h3 class="fw-bold" style="color:#EF662F">Important Instructions</h3>
+						<hr>
+						<h4 class="fw-bold">Kindly go through the below instructions before giving the online test</h4>
+						<ul>
+							<li>All Questions are Compulsory.</li>
+							<li>This test is time base, so manage your time efficiently and answer questions quickly.
+							</li>
+							<li>There is no negative marking, but avoid random guessing.</li>
+							<li>Do not Open other tabs or windows, as doing so will automatically submit your test.</li>
+							<li>Read each question carefully before answering.</li>
+							<li>The questions are based on your syllabus.</li>
+							<li>Ensure a stable internet connection throughout the test.</li>
+							<li>Have a backup power source in case of power outages.</li>
+							<li>Keep your student ID and login credentials ready before the test begins.</li>
+							<li>Make sure your device is fully charged or plugged in.</li>
+							<li>Have a pen and paper ready for rough work if needed.</li>
+							<li>Log in to the test platform at least 10 minutes before the start time.</li>
+							<li>Familiarize yourself with the test interface beforehead.</li>
+							<li>If you encounter technical issues, immediately notify the test proctor or technical
+								support.</li>
+							<li>Avoid distractions and ensure you are in a quiet environment.</li>
+							<li>Use a comfortable and ergonomic setup to maintain focus during the test.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+</body>
+
+</html>

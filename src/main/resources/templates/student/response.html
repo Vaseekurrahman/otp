@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="student/studentBase::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		<h2 style="text-align: center; color: #EF662F">Give Response</h2>
+		<div th:if="${msg}">
+			<p th:text="${msg}" class="alert alert-success alert-dismissible"></p>
+		</div>
+		<form class="form-group" method="post" th:object="${dto}">
+			<table class="table table bordered" style="margin: auto; width: 60%">
+				<tr>
+					<td>Select Response Type</td>
+					<td>
+						<select class="form-control" th:field="${dto.responsetype}">
+							<option value="">--Select Response Type--</option>
+							<option value="Feedback">Feedbak</option>
+							<option value="Complaint">Complaint</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Enter Response Subject</td>
+					<td>
+						<input type="text" th:field="${dto.subject}" placeholder="Enter response subject..." required class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>Enter Response Subject</td>
+					<td>
+						<textarea th:field="${dto.message}" placeholder="Enter response message..." required class="form-control"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<button class="btn btn-primary">Submit</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+
+</html>

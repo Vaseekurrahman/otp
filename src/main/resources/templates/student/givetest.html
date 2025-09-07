@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="student/studentBase::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<div class="col-sm-12">
+				<div th:if="${msg}">
+					<p th:text="${msg}" class="alert alert-success alert-dismissible"></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card shadow p-3 w-100 h-100">
+					<h3 class="fw-bold" style="color:#EF662F">Give Test</h3>
+					<hr>
+					<h4 class="fw-bold">Kindly go through the below instructions before giving the online test</h4>
+					<ul>
+						<li>All Questions are Compulsory.</li>
+						<li>This test is time base, so manage your time efficiently and answer questions quickly.</li>
+						<li>There is no negative marking, but avoid random guessing.</li>
+						<li>Do not Open other tabs or windows, as doing so will automatically submit your test.</li>
+						<li>Read each question carefully before answering.</li>
+						<li>The questions are based on your syllabus.</li>
+						<li>Ensure a stable internet connection throughout the test.</li>
+						<li>Have a backup power source in case of power outages.</li>
+						<li>Keep your student ID and login credentials ready before the test begins.</li>
+						<li>Make sure your device is fully charged or plugged in.</li>
+						<li>Have a pen and paper ready for rough work if needed.</li>
+						<li>Log in to the test platform at least 10 minutes before the start time.</li>
+						<li>Familiarize yourself with the test interface beforehead.</li>
+						<li>If you encounter technical issues, immediately notify the test proctor or technical support.
+						</li>
+						<li>Avoid distractions and ensure you are in a quiet environment.</li>
+						<li>Use a comfortable and ergonomic setup to maintain focus during the test.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<form method="post" action="/student/starttest">
+				<div class="col-sm-12 py-3">
+					<div class="row">
+						<div class="col-sm-12">
+							<input id="accept" type="checkbox" required />
+							<label for="accept" style="font-weight: bolder;">I hereby declare that I have read all the important
+								instructions
+								mentioned
+								above before giving the Online Internship Test.</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 mt-3 text-center">
+							<a href="starttest">
+								<button type="submit" class="btn px-3"
+									style="background-color: #EF662F; color: #fff">Start
+									Test</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+
+</html>

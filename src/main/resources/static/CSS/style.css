@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header1 {
+	background-color: #F4F2F2DD;
+}
+
+.header1 span i {
+	text-align: center;
+	padding: 5px;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #EF662F;
+}
+
+.header-2 {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.span-color {
+	color: #EF662F;
+}
+
+.heading {
+	background-color: #EF662F;
+}
+
+.bg {
+	background-color: #EF662F;
+}
+
+p {
+	font-size: 17px;
+	text-align: justify;
+}
+
+.button {
+	height: 40px;
+	padding-inline: 10px;
+	border: none;
+	background-color: #EF662F;
+
+}
+
+.button a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+}
+
+.button-2 a {
+	color: #000;
+}
+
+.button-2 {
+	background-color: #fff;
+}
+
+.expert-btn {
+	position: fixed;
+	z-index: 1021;
+	transform: rotate(-90deg);
+	right: -45px;
+	top: 50%;
+	padding: 10px;
+	border: none;
+	background-color: #EF662F;
+}
+
+.expert-btn a {
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+}
+
+.expert-btn:hover {
+	background-color: #198754;
+}
+
+.is-hover {
+	border-radius: 5px;
+}
+
+.is-hover,
+.is-hover i {
+	transition: all 0.2s ease;
+}
+
+.is-hover:hover {
+	background-color: blue;
+
+}
+
+.is-hover:hover i {
+	color: #ffffff;
+}
+
+.or-color.active {
+	color: #EF662F !important;
+	font-weight: bold;
+}
